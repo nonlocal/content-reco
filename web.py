@@ -25,8 +25,7 @@ def predict():
     num_predictions = 10
     if not item:
         return []
-    return content_engine.predict(str(item), num_predictions, "id_desc_price_real_fuck.xlsx")  #content_engine.predict(str(item), num_predictions)
-    #	    print ','.join(content_engine.predict(str(item), num_predictions))  #content_engine.predict(str(item), num_predictions)
+    return content_engine.predict(str(item), num_predictions, "id_desc_price.xlsx")
 
 
 """
@@ -38,7 +37,7 @@ curl -X GET -H "X-API-TOKEN: FOOBAR1" -H "Content-Type: application/json; charse
 def train():
     from engines import content_engine
     #data_url = request.get_data('data-url', None)
-    content_engine.train("id_desc_price_real_fuck.xlsx")#sample-data.csv")
+    content_engine.train("id_desc_price.xlsx")
     return "\n\nSuccess: Model trained\n\n"
 
 
